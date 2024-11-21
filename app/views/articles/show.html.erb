@@ -1,5 +1,9 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
 
-<li><%= link_to "Editar", edit_article_path(@article) %> </li><br>
-<%= link_to 'Volver a la lista de articulos', articles_path, class: 'btn btn-primary' %>
+<li><%= link_to "Editar", edit_article_path(@article) %></li>
+<li><%= link_to "Eliminar", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "¿Estás seguro?"
+                  } %></li> <br>
+<li><%= link_to 'Volver a la lista de articulos', articles_path, class: 'btn btn-primary' %></li>
