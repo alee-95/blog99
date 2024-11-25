@@ -7,3 +7,9 @@
                     turbo_confirm: "¿Estás seguro?"
                   } %></li> <br>
 <li><%= link_to 'Volver a la lista de articulos', articles_path, class: 'btn btn-primary' %></li>
+
+<h4> Comentarios: </h4>
+<%= render @article.comments %>
+
+<h4>Agregar un comentario:</h4>
+<%= render "comments/form", article: @article%>
